@@ -1,0 +1,23 @@
+./RsRf start.map 4 6 << EOF > temp.log
+mapin 2 model.map
+maskin 1 start.msk
+maskin 2 model.msk
+maskin 3 temp.msk
+
+avg 1 in 1
+neg
+plus 1 total value
+
+avg 2 in 2
+neg
+plus 2 total value
+
+plus 1 total 0.45
+plus 2 total 0.45
+
+rfac 2 1 in 3 2
+rfac 2 1 in 3 4
+rfac 2 1 in 3 7
+
+quit
+EOF
